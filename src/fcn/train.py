@@ -31,6 +31,7 @@ def parse_arg():
 
 
 if __name__ == "__main__":
+    print("-----------------training begining---------------------")
     args = parse_arg()
     model_prefix = "../../models/" + args.model + "/"
     os.makedirs(model_prefix, exist_ok=True)
@@ -85,3 +86,4 @@ if __name__ == "__main__":
             callbacks = [checkpointer, csvlog], 
             workers = 1)#, initial_epoch = 200
     model.save_weights(model_prefix + 'final' + str(args.epochs) + 'iter_model.h5')
+    print("-----------------training endding---------------------")

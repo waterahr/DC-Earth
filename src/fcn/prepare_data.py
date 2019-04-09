@@ -32,7 +32,7 @@ def generate_img_from_namelist(X_path, Y_path, batch_size=4096):
                 random.shuffle(indices)
                 X = np.array(X)[list(indices)][..., np.newaxis]
                 Y = np.array(Y)[list(indices)][..., np.newaxis]
-                print(X.shape)
+                #print(X.shape)
                 yield (X, Y)
                 cnt = 0
                 X = []
